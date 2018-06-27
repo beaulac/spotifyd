@@ -38,3 +38,10 @@ pulseaudio_backend = ["librespot/pulseaudio-backend"]
 portaudio_backend = ["librespot/portaudio-backend"]
 dbus_mpris = ["dbus", "dbus-tokio"]
 default = ["alsa_backend"]
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+incremental = false
+opt-level = "z"
